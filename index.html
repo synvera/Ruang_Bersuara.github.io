@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+  <title>Ruang Bersuara | Synvera</title>
+</head>
+<body>
+  <div class="hero">
+    <h1><span>Ruang Bersuara</span></h1>
+    <div class="typing" id="typing-text">Tempat Aman untuk Didengar</div>
+    <p>Setiap orang punya cerita, perasaan, dan pikiran yang ingin disampaikan. <br>
+Di Ruang Bersuara, kamu bisa menulis, berbagi, atau sekadar meluapkan isi hati dengan tenang. <br>
+Tanpa tekanan. Tanpa penilaian. Hanya ruang yang mendengarkan.</p>
+    <button class="pindah" onclick="window.location.href='login.html'">
+  Mulai Ceritakan Suaramu
+</button>
+
+
+    <!-- Tombol Scroll ke Bawah -->
+    <div class="scroll-down" onclick="scrollToNext()">
+      Geser ke bawah
+      <div class="arrow-down">
+        <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" fill="none" stroke="#333" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M6 9l6 6 6-6" />
+        </svg>
+      </div>
+    </div>
+  </div>
+
+<div class="conten" id="next-section">
+  <div class="boxSatu" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
+    <h1 data-aos="zoom-in" data-aos-delay="150">About <span>Ruang Bersuara</span></h1>
+    <p data-aos="fade-up" data-aos-delay="300">
+      Ruang Cerita adalah platform bagi siapa pun yang <br>
+      ingin berbagi cerita, pengalaman, atau perasaan dengan aman dan nyaman. <br>
+      Di sini, setiap pengguna dapat menulis dan mengekspresikan diri tanpa takut dihakimi. <br>
+      Kami menghadirkan ruang yang hangat dan suportif untuk saling mendengarkan dan memahami.
+    </p>
+  </div>
+</div>
+
+<div class="why">
+  <h1>Kenapa <span>Ruang Bersuara</span></h1>
+  <p>Di tengah dunia yang ramai, sering kali suara hati kita tenggelam. <br>
+Ruang Bersuara hadir untuk memberi tempat bagi siapa pun yang ingin berbicara — tanpa harus dikenal, <br>tanpa takut dihakimi.
+Kami menciptakan lingkungan yang aman, lembut, dan penuh empati,<br> agar setiap kata bisa menjadi langkah menuju kelegaan.</p>
+</div>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  // Efek mengetik
+  const text = document.getElementById('typing-text');
+  text.addEventListener('animationend', (e) => {
+    if (e.animationName === 'typing') {
+      text.style.borderRight = 'none';
+    }
+  });
+
+  // Scroll halus ke section berikutnya
+  function scrollToNext() {
+    document.getElementById("next-section").scrollIntoView({ behavior: "smooth" });
+  }
+
+  // Inisialisasi AOS (Animate On Scroll)
+  AOS.init({
+    duration: 1000,   // durasi animasi dalam ms
+    once: true,       // animasi hanya muncul sekali
+    offset: 120,      // jarak sebelum elemen mulai muncul
+    easing: 'ease-out-cubic' // transisi lembut
+  });
+</script>
+
+</body>
+</html>
