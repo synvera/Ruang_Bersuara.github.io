@@ -118,12 +118,12 @@ section {
 .conten {
   min-height: 100vh;
   text-align: center;
-  padding: 80px 20px 60px;
+  padding: 70px 20px 40px;
 }
 
 .boxSatu h1 {
   font-weight: 600;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .boxSatu p {
@@ -133,15 +133,15 @@ section {
   max-width: 700px;
 }
 
-/* Section Jarak Lebih Proporsional */
+/* Section Jarak Lebih Dekat */
 .why, .fitur, .mulai {
-  padding: 60px 180px;
-  margin-top: 60px;
+  padding: 50px 180px;
+  margin-top: 25px; /* sebelumnya 60px */
 }
 
 .why h1, .fitur h1, .mulai h1 {
   font-weight: 600;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .why p, .fitur li, .mulai p {
@@ -155,7 +155,7 @@ section {
 }
 
 .fitur li {
-  margin-top: 10px;
+  margin-top: 8px;
 }
 
 .mulai {
@@ -164,7 +164,7 @@ section {
 
 .overlay {
   background-color: #ccc;
-  margin: 60px 180px 0;
+  margin: 35px 180px 0; /* lebih rapat */
   height: 2px;
   border-radius: 2px;
 }
@@ -181,7 +181,7 @@ section {
   }
 
   .overlay {
-    margin: 50px 80px 0;
+    margin: 30px 80px 0;
   }
 }
 
@@ -216,9 +216,9 @@ section {
   }
 
   .why, .fitur, .mulai {
-    padding: 60px 30px;
+    padding: 50px 30px;
     text-align: left;
-    margin-top: 40px;
+    margin-top: 25px;
   }
 
   .why h1, .fitur h1, .mulai h1 {
@@ -234,7 +234,7 @@ section {
   }
 
   .overlay {
-    margin: 40px 30px 0;
+    margin: 25px 30px 0;
   }
 }
 
@@ -273,8 +273,8 @@ section {
   }
 
   .why, .fitur, .mulai {
-    padding: 50px 20px;
-    margin-top: 35px;
+    padding: 40px 20px;
+    margin-top: 20px;
   }
 
   .why h1, .fitur h1, .mulai h1 {
@@ -286,7 +286,7 @@ section {
   }
 
   .overlay {
-    margin: 30px 20px 0;
+    margin: 20px 20px 0;
   }
 }
 
