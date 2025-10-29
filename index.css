@@ -1,7 +1,5 @@
-/* ===== FONT IMPORT ===== */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Story+Script&display=swap');
 
-/* ===== RESET & BASE ===== */
 * {
   margin: 0;
   padding: 0;
@@ -14,7 +12,6 @@ html, body {
   color: #222;
 }
 
-/* ===== HERO SECTION ===== */
 .hero {
   height: 100vh;
   display: flex;
@@ -78,7 +75,6 @@ html, body {
   color: #fff;
 }
 
-/* ===== SCROLL DOWN ===== */
 .scroll-down {
   position: absolute;
   bottom: 50px;
@@ -108,7 +104,6 @@ html, body {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* ===== CONTENT SECTIONS ===== */
 section {
   width: 100%;
   max-width: 1200px;
@@ -116,9 +111,8 @@ section {
 }
 
 .conten {
-  min-height: 100vh;
   text-align: center;
-  padding: 70px 20px 40px;
+  padding: 60px 20px 40px;
 }
 
 .boxSatu h1 {
@@ -133,15 +127,14 @@ section {
   max-width: 700px;
 }
 
-/* Section Jarak Lebih Dekat */
 .why, .fitur, .mulai {
-  padding: 50px 180px;
-  margin-top: 25px; /* sebelumnya 60px */
+  padding: 40px 180px;
+  margin-top: 15px;
 }
 
 .why h1, .fitur h1, .mulai h1 {
   font-weight: 600;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .why p, .fitur li, .mulai p {
@@ -149,13 +142,20 @@ section {
   line-height: 1.7;
 }
 
+.fitur {
+  text-align: right;
+}
+
 .fitur ul {
   padding: 0;
   list-style: none;
+  display: inline-block;
+  text-align: right;
 }
 
 .fitur li {
-  margin-top: 8px;
+  list-style: none;
+  margin-top: 6px;
 }
 
 .mulai {
@@ -164,14 +164,11 @@ section {
 
 .overlay {
   background-color: #ccc;
-  margin: 35px 180px 0; /* lebih rapat */
-  height: 2px;
+  margin: 20px 180px 0;
+  height: 1.5px;
   border-radius: 2px;
 }
 
-/* ===== RESPONSIVE DESIGN ===== */
-
-/* Tablet (≤1024px) */
 @media (max-width: 1024px) {
   .hero,
   .why,
@@ -180,12 +177,23 @@ section {
     padding: 0 80px;
   }
 
+  .conten {
+    padding: 50px 40px 30px;
+  }
+
+  .why, .fitur, .mulai {
+    margin-top: 12px;
+  }
+
   .overlay {
-    margin: 30px 80px 0;
+    margin: 18px 80px 0;
+  }
+
+  .fitur {
+    text-align: right;
   }
 }
 
-/* Mobile Landscape & Small Tablets (≤768px) */
 @media (max-width: 768px) {
   .hero {
     padding: 0 30px;
@@ -215,10 +223,13 @@ section {
     font-size: 13px;
   }
 
+  .conten {
+    padding: 40px 30px 25px;
+  }
+
   .why, .fitur, .mulai {
-    padding: 50px 30px;
-    text-align: left;
-    margin-top: 25px;
+    padding: 40px 30px;
+    margin-top: 10px;
   }
 
   .why h1, .fitur h1, .mulai h1 {
@@ -229,16 +240,15 @@ section {
     margin-left: 15px;
   }
 
-  .mulai {
-    text-align: center;
+  .fitur {
+    text-align: left;
   }
 
   .overlay {
-    margin: 25px 30px 0;
+    margin: 18px 30px 0;
   }
 }
 
-/* Mobile Portrait (≤480px) */
 @media (max-width: 480px) {
   .hero {
     padding: 0 20px;
@@ -272,9 +282,13 @@ section {
     width: 28px;
   }
 
+  .conten {
+    padding: 35px 20px 20px;
+  }
+
   .why, .fitur, .mulai {
-    padding: 40px 20px;
-    margin-top: 20px;
+    padding: 35px 20px;
+    margin-top: 8px;
   }
 
   .why h1, .fitur h1, .mulai h1 {
@@ -285,17 +299,11 @@ section {
     font-size: 14px;
   }
 
-  .overlay {
-    margin: 20px 20px 0;
+  .fitur {
+    text-align: left;
   }
-}
 
-/* Extra Small (≤360px) */
-@media (max-width: 360px) {
-  .hero h1 { font-size: 1.3rem; }
-  .typing { font-size: 12px; }
-  .hero p { font-size: 13px; }
-  .pindah { font-size: 12px; height: 42px; }
-  .why h1, .fitur h1, .mulai h1 { font-size: 1.2rem; }
-  .fitur li, .why p, .mulai p { font-size: 13px; }
+  .overlay {
+    margin: 15px 20px 0;
+  }
 }
