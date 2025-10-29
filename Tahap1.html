@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+  <link rel="stylesheet" href="Tahap1.css">
+  <title>Login | Synvera</title>
+</head>
+<body>
+<div class="head" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
+  <h1 data-aos="fade-up" data-aos-delay="150">Hello <span class="highlight" id="nameOutput">...</span></h1>
+  <input type="text" id="nameInput" placeholder="Masukkan namamu di sini..." id="typing-text" data-aos="fade-up" data-aos-delay="300" />
+  <button id="submitBtn" data-aos="fade-up" data-aos-delay="300">Lanjut</button>
+  <a href="index.html" data-aos="fade-up" data-aos-delay="300"> < Kembali</a>
+</div>
+</body>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="Tahap.js"></script>
+<script>
+      AOS.init({
+    duration: 1000,   // durasi animasi dalam ms
+    once: true,       // animasi hanya muncul sekali
+    offset: 120,      // jarak sebelum elemen mulai muncul
+    easing: 'ease-out-cubic' // transisi lembut
+  });
+</script>
+</html>

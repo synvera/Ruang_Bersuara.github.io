@@ -5,16 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="index.css">
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
   <title>Ruang Bersuara | Synvera</title>
 </head>
 <body>
-  <div class="hero">
-    <h1><span>Ruang Bersuara</span></h1>
-    <div class="typing" id="typing-text">Tempat Aman untuk Didengar</div>
-    <p>Setiap orang punya cerita, perasaan, dan pikiran yang ingin disampaikan. <br>
+  <div class="hero" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
+    <h1 data-aos="fade-up" data-aos-delay="150"><span>Ruang Bersuara</span></h1>
+    <div class="typing" id="typing-text" data-aos="fade-up" data-aos-delay="300">Tempat Aman untuk Didengar</div>
+    <p data-aos="fade-up" data-aos-delay="300">Setiap orang punya cerita, perasaan, dan pikiran yang ingin disampaikan. <br>
 Di Ruang Bersuara, kamu bisa menulis, berbagi, atau sekadar meluapkan isi hati dengan tenang. <br>
 Tanpa tekanan. Tanpa penilaian. Hanya ruang yang mendengarkan.</p>
-    <button class="pindah" onclick="window.location.href='login.html'">
+    <button class="pindah" onclick="window.location.href='Tahap1.html'" data-aos="fade-up" data-aos-delay="300">
   Mulai Ceritakan Suaramu
 </button>
 
@@ -42,14 +43,34 @@ Tanpa tekanan. Tanpa penilaian. Hanya ruang yang mendengarkan.</p>
   </div>
 </div>
 
-<div class="why">
-  <h1>Kenapa <span>Ruang Bersuara</span></h1>
-  <p>Di tengah dunia yang ramai, sering kali suara hati kita tenggelam. <br>
+<div class="why" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
+  <h1 data-aos="fade-up" data-aos-delay="150">Kenapa Ada <span>Ruang Bersuara</span></h1>
+  <p data-aos="fade-up" data-aos-delay="300">Di tengah dunia yang ramai, sering kali suara hati kita tenggelam. <br>
 Ruang Bersuara hadir untuk memberi tempat bagi siapa pun yang ingin berbicara — tanpa harus dikenal, <br>tanpa takut dihakimi.
 Kami menciptakan lingkungan yang aman, lembut, dan penuh empati,<br> agar setiap kata bisa menjadi langkah menuju kelegaan.</p>
 </div>
 
+<div class="fitur" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
+  <h1 data-aos="fade-up" data-aos-delay="150">Apa yang bisa dilakukan disini??</h1>
+  <li data-aos="fade-up" data-aos-delay="300">Memilih Role sesuai keinginan mu .1
+  <li data-aos="fade-up" data-aos-delay="300">Melihat nasib hidup mu .2</li>
+  <li data-aos="fade-up" data-aos-delay="300">Menjadikan mental anda kuat .3</li>
+  <li data-aos="fade-up" data-aos-delay="300">Menjadikan diri anda lebih baik .4</li>
+</div>
+
+<div class="mulai" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
+  <h1 data-aos="fade-up" data-aos-delay="150">Bagaimana Cara Memulainya?</h1>
+  <p data-aos="fade-up" data-aos-delay="300">1. Lihat Dihalaman paling atas</p>
+  <p data-aos="fade-up" data-aos-delay="300">2. Klik yang "Mulai Ceritakan Suaramu"</p>
+  <p data-aos="fade-up" data-aos-delay="300">3. Lanjutkan saja hingga selesai</p>
+</div>
+
+<div class="overlay">
+  <i class="fas fa-2x fa-sync-alt fa-spin"></i>
+</div>
+
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 <script>
   // Efek mengetik
   const text = document.getElementById('typing-text');

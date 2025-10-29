@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&family=Story+Script&display=swap');
+html, body{
+    margin: 0;
+    padding: 0;
+}
+
+.nav{
+    text-align: center;
+}
+.nav h1{
+    font-size: 30px;
+    font-family: "Poppins", sans-serif;
+    margin-top: 15%;
+}
+
+.container {
+  text-align: center;
+}
+
+h1 {
+  font-family: "Poppins", sans-serif;
+  font-size: 25px;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.options {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-bottom: 40px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.option-btn {
+  padding: 15px 25px;
+  font-size: 1rem;
+  border: 2px solid #333;
+  background-color: white;
+  color: #333;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.option-btn:hover {
+  background-color: #e0e0e0;
+}
+
+.option-btn.active {
+  background-color: #333;
+  color: white;
+}
+
+#mainBtn {
+  padding: 12px 25px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  background-color: #ccc;
+  color: white;
+  cursor: not-allowed;
+  transition: 0.3s;
+}
+
+#mainBtn:enabled {
+  background-color: #4b6bfb;
+  cursor: pointer;
+}

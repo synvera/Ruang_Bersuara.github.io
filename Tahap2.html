@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="Tahap2.css">
+  <title>Login | Synvera</title>
+</head>
+<body>
+<div class="nav">
+  <h1 id="greeting">Hello...</h1>
+</div>
+<div class="container">
+    <h1>Pilih salah satu, Sesuai dengan Role <br> Kehidupan kalian </h1>
+    <div class="options">
+      <div class="column">
+        <button class="option-btn">Badut</button>
+        <button class="option-btn">Homeless</button>
+        <button class="option-btn">BackBurner</button>
+      </div>
+      <div class="column">
+        <button class="option-btn">Second Choice</button>
+        <button class="option-btn">Pelampiasan</button>
+        <button class="option-btn">All Role</button>
+      </div>
+    </div>
+
+    <button id="mainBtn" disabled>Lanjut</button>
+  </div>
+  <script src="Tahap.js"></script>
+  <script>
+    // === ambil nama dari Tahap1 ===
+    const name = getUsername();
+    const greeting = document.getElementById("greeting");
+
+    if (!name) {
+      // kalau user masuk tanpa isi nama di tahap 1
+      window.location.href = "index.html";
+    } else {
+      greeting.textContent = `Hello, ${name}`;
+    }
+
+    // === kalau user refresh halaman, hapus nama dan balik ke index ===
+    const navType = performance.getEntriesByType("navigation")[0].type;
+    if (navType === "reload") {
+      clearUsername();
+      window.location.href = "index.html";
+    }
+
+    // === pilihan interaktif ===
+    const optionButtons = document.querySelectorAll(".option-btn");
+    const mainBtn = document.getElementById("mainBtn");
+    let selected = null;
+
+    optionButtons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        // reset semua button
+        optionButtons.forEach((b) => b.classList.remove("active"));
+
+        // tandai button yang diklik
+        btn.classList.add("active");
+        selected = btn.textContent;
+
+        // aktifkan tombol utama
+        mainBtn.disabled = false;
+      });
+    });
+
+    mainBtn.addEventListener("click", () => {
+      if (!selected) return;
+
+      // simpan pilihan ke localStorage
+      localStorage.setItem("selectedOption", selected);
+
+      // pindah ke halaman selanjutnya
+      window.location.href = "Tahap3.html";
+    });
+  </script>
+</body>
+</html>
