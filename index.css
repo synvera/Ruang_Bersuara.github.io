@@ -57,6 +57,11 @@ html, body {
   line-height: 1.6;
 }
 
+span{
+  font-family: "Story Script", sans-serif;
+  font-weight: 00;
+  font-style: normal;
+}
 .pindah {
   margin-top: 25px;
   width: 250px;
@@ -169,6 +174,26 @@ section {
   border-radius: 2px;
 }
 
+.mulai a{
+  text-decoration: none;
+  color: #000;
+  font-weight: 400;
+}
+
+footer{
+  display: flex;
+  text-align: center;
+}
+
+.logoVTR{
+  font-family: "Story Script", sans-serif;
+  font-weight: 800;
+  font-size: 15px;
+  margin-left: 5px;
+}
+
+
+
 @media (max-width: 1024px) {
   .hero,
   .why,
@@ -192,6 +217,7 @@ section {
   .fitur {
     text-align: right;
   }
+
 }
 
 @media (max-width: 768px) {
@@ -220,6 +246,7 @@ section {
 
   .scroll-down {
     bottom: 80px;
+    left: 41.5%;
     font-size: 13px;
   }
 
@@ -227,9 +254,13 @@ section {
     padding: 40px 30px 25px;
   }
 
-  .why, .fitur, .mulai {
+  .why, .mulai {
     padding: 40px 30px;
     margin-top: 10px;
+  }
+
+  .fitur{
+    text-align: right;
   }
 
   .why h1, .fitur h1, .mulai h1 {
@@ -286,9 +317,13 @@ section {
     padding: 35px 20px 20px;
   }
 
-  .why, .fitur, .mulai {
+  .why, .mulai {
     padding: 35px 20px;
     margin-top: 8px;
+  }
+
+  .fitur{
+    text-align: right;
   }
 
   .why h1, .fitur h1, .mulai h1 {

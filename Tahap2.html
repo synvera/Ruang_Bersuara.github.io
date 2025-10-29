@@ -3,15 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="Tahap2.css">
-  <title>Login | Synvera</title>
+  <title>Tahap 2 - Pilihan Role</title>
+  <link rel="stylesheet" href="Tahap2.css" />
 </head>
 <body>
-<div class="nav">
-  <h1 id="greeting">Hello...</h1>
-</div>
-<div class="container">
-    <h1>Pilih salah satu, Sesuai dengan Role <br> Kehidupan kalian </h1>
+  <div class="nav">
+    <h1 id="greeting">Hello...</h1>
+    <p>Sehat Sehat ya, Tapi sebelumnya</p>
+  </div>
+
+  <div class="container">
+    <h1>Pilih salah satu, Sesuai dengan Role <br> Kehidupan kalian</h1>
     <div class="options">
       <div class="column">
         <button class="option-btn">Badut</button>
@@ -25,54 +27,80 @@
       </div>
     </div>
 
+    <p id="reactionText"></p>
     <button id="mainBtn" disabled>Lanjut</button>
+    <h6>Kalau mau riset tinggal refresh aja, <br> nanti otomatis balik ke halaman awal </h6>
   </div>
+
   <script src="Tahap.js"></script>
   <script>
-    // === ambil nama dari Tahap1 ===
     const name = getUsername();
     const greeting = document.getElementById("greeting");
+    const reactionText = document.getElementById("reactionText");
+    const optionButtons = document.querySelectorAll(".option-btn");
+    const mainBtn = document.getElementById("mainBtn");
 
+    // 🔸 Cek nama
     if (!name) {
-      // kalau user masuk tanpa isi nama di tahap 1
       window.location.href = "index.html";
     } else {
       greeting.textContent = `Hello, ${name}`;
     }
 
-    // === kalau user refresh halaman, hapus nama dan balik ke index ===
+    // // 🔸 Kalau halaman direfresh → hapus nama & balik ke index
     const navType = performance.getEntriesByType("navigation")[0].type;
     if (navType === "reload") {
       clearUsername();
       window.location.href = "index.html";
     }
 
-    // === pilihan interaktif ===
-    const optionButtons = document.querySelectorAll(".option-btn");
-    const mainBtn = document.getElementById("mainBtn");
-    let selected = null;
+    // === Logika pilihan ===
+    let selectedRole = null;
 
     optionButtons.forEach((btn) => {
       btn.addEventListener("click", () => {
-        // reset semua button
+        // reset state
         optionButtons.forEach((b) => b.classList.remove("active"));
-
-        // tandai button yang diklik
         btn.classList.add("active");
-        selected = btn.textContent;
 
-        // aktifkan tombol utama
+        selectedRole = btn.textContent;
         mainBtn.disabled = false;
+        mainBtn.classList.add("enabled");
+
+        // tampilkan reaksi sesuai pilihan
+        switch (selectedRole) {
+          case "Badut":
+            reactionText.textContent = "Kasian banget lu dut badut!!! Tapi seengganya dia terhibur lah ya";
+            break;
+          case "Homeless":
+            reactionText.textContent = "Dasar hilang arah!!!";
+            break;
+          case "BackBurner":
+            reactionText.textContent = "Kamu lagu ya?? kok BackBurner?";
+            break;
+          case "Second Choice":
+            reactionText.textContent = "Duh pilihan kedua, kaya jadi pilihannya aja";
+            break;
+          case "Pelampiasan":
+            reactionText.textContent = "Duh.... Ini sih paling parah, ko mau sih ";
+            break;
+          case "All Role":
+            reactionText.textContent = "Parah der, all role, lu kata enak? ngejalanin semuanya dengan pura pura?? seolah olah baik baik aja?? cihhh🤮🤮";
+            break;
+          default:
+            reactionText.textContent = "";
+        }
       });
     });
 
+    // === Tombol lanjut ===
     mainBtn.addEventListener("click", () => {
-      if (!selected) return;
+      if (!selectedRole) return;
 
-      // simpan pilihan ke localStorage
-      localStorage.setItem("selectedOption", selected);
+      // simpan role ke localStorage
+      localStorage.setItem("role", selectedRole);
 
-      // pindah ke halaman selanjutnya
+      // pindah ke halaman berikutnya
       window.location.href = "Tahap3.html";
     });
   </script>
