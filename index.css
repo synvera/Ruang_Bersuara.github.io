@@ -1,52 +1,47 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&family=Story+Script&display=swap');
+/* ===== FONT IMPORT ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Story+Script&display=swap');
 
+/* ===== RESET & BASE ===== */
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
 html, body {
-  margin: 0;
-  padding: 0;
   scroll-behavior: smooth;
-  overflow-x: hidden;
+  font-family: "Poppins", sans-serif;
+  color: #222;
 }
 
+/* ===== HERO SECTION ===== */
 .hero {
-  margin: 0;
-  padding: 0;
   height: 100vh;
-  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding: 0 180px;
+  position: relative;
 }
 
 .hero h1 {
-  font-family: "Poppins", sans-serif;
   font-weight: 500;
-  margin-left: 180px;
-  margin-right: 20px;
+  font-size: 2.5rem;
 }
 
-.hero span {
-  font-family: "Story Script", sans-serif;
+.hero h1 span {
+  font-family: "Story Script", cursive;
   font-weight: 800;
 }
 
-/* Efek mengetik */
 .typing {
-  font-family: "Poppins", sans-serif;
   font-weight: 300;
   margin-top: 5px;
-  margin-bottom: 20px;
-  margin-left: 180px;
-  margin-right: 20px;
   font-size: 15px;
-  color: #222;
   border-right: 3px solid #222;
   white-space: nowrap;
   overflow: hidden;
-  max-width: fit-content;
+  max-width: 0;
   animation: typing 3.5s steps(40, end) forwards, blink 0.6s step-end infinite;
 }
 
@@ -60,321 +55,182 @@ html, body {
 }
 
 .hero p {
-  font-size: 17.5px;
-  font-family: "Poppins", sans-serif;
-  margin-left: 180px;
-  margin-right: 20px;
-  margin-bottom: 20px;
-}
-
-span {
-  font-family: "Story Script", sans-serif;
-  font-weight: 800;
+  font-size: 17px;
+  margin-top: 15px;
+  line-height: 1.6;
 }
 
 .pindah {
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
-  margin-left: 180px;
+  margin-top: 25px;
   width: 250px;
-  height: 40px;
+  height: 42px;
   border-radius: 8px;
-  font-size: 12.5px;
-  border: 0.5px solid black;
-  background: transparent;
+  border: 1px solid #000;
+  font-weight: 600;
+  font-size: 13px;
   cursor: pointer;
   transition: all 0.3s ease;
+  background-color: transparent;
 }
 
 .pindah:hover {
-  background-color: black;
-  color: white;
+  background-color: #000;
+  color: #fff;
 }
 
-/* Arrow Down Button - Fixed */
-.arrow-down {
-  position: absolute;
-  bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%);
-  cursor: pointer;
-  animation: bounce 2s infinite;
-  z-index: 10;
-}
-
-.arrow-down svg {
-  display: block;
-}
-
-/* Scroll Down Text (jika pakai text) */
+/* ===== SCROLL DOWN ===== */
 .scroll-down {
   position: absolute;
-  bottom: 80px;
+  bottom: 50px;
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
-  font-family: "Poppins", sans-serif;
-  color: #333;
-  font-size: 14px;
-  font-weight: 400;
+  font-size: 15px;
   cursor: pointer;
+  animation: fadeIn 2s ease-in-out forwards;
 }
 
-/* Animasi bounce */
+.scroll-down span,
+.scroll-down svg {
+  display: block;
+  margin: 5px auto 0;
+  animation: bounce 1.5s infinite;
+}
+
 @keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
-    transform: translateX(-50%) translateY(0);
-  }
-  40% {
-    transform: translateX(-50%) translateY(-10px);
-  }
-  60% {
-    transform: translateX(-50%) translateY(-5px);
-  }
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(8px); }
+  60% { transform: translateY(4px); }
 }
 
-/* Konten bawah */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== CONTENT SECTIONS ===== */
 .conten {
-  background: #fff;
   min-height: 100vh;
-  padding: 60px 20px;
-}
-
-.boxSatu {
   text-align: center;
-  margin-bottom: 80px;
+  padding: 80px 20px;
 }
 
 .boxSatu h1 {
-  margin-bottom: 10px;
-  font-family: "Poppins", sans-serif;
   font-weight: 600;
-  margin-top: 40px;
+  margin-bottom: 10px;
 }
 
 .boxSatu p {
-  font-family: "Poppins", sans-serif;
-  font-weight: 300;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.why {
-  margin-bottom: 80px;
-}
-
-.why h1 {
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
-  margin-left: 180px;
-  margin-bottom: 15px;
-}
-
-.why p {
-  margin-left: 180px;
-  margin-right: 180px;
-  font-family: "Poppins", sans-serif;
   font-weight: 300;
   line-height: 1.6;
 }
 
-.fitur {
-  margin-bottom: 80px;
-  text-align: right;
+.why, .fitur, .mulai {
+  padding: 80px 180px;
 }
 
-.fitur h1 {
-  margin-right: 180px;
-  font-family: "Poppins", sans-serif;
+.why h1, .fitur h1, .mulai h1 {
   font-weight: 600;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
+}
+
+.why p, .fitur li, .mulai p {
+  font-weight: 300;
+  line-height: 1.6;
 }
 
 .fitur ul {
   padding: 0;
-  margin: 0;
+  list-style: none;
 }
 
 .fitur li {
-  font-family: "Poppins", sans-serif;
-  font-weight: 300;
   margin-top: 10px;
-  margin-right: 180px;
-  list-style: none;
-  line-height: 1.6;
 }
 
 .mulai {
   text-align: center;
-  margin-top: 80px;
-  margin-bottom: 80px;
-}
-
-.mulai h1 {
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
-  margin-bottom: 15px;
-}
-
-.mulai p {
-  font-family: "Poppins", sans-serif;
-  font-weight: 300;
-  max-width: 600px;
-  margin: 0 auto;
 }
 
 .overlay {
   background-color: grey;
-  margin-top: 50px;
-  margin-left: 180px;
-  margin-right: 180px;
-  padding: 20px;
+  margin: 50px 180px 0;
+  height: 2px;
 }
 
 /* ===== RESPONSIVE DESIGN ===== */
 
-/* Tablet */
+/* Tablet (≤1024px) */
 @media (max-width: 1024px) {
-  .hero h1,
-  .typing,
-  .hero p,
-  .pindah {
-    margin-left: 80px;
-  }
-  
-  .why h1,
-  .why p {
-    margin-left: 80px;
-    margin-right: 80px;
-  }
-  
-  .fitur h1,
-  .fitur li {
-    margin-right: 80px;
-  }
-  
-  .overlay {
-    margin-left: 80px;
-    margin-right: 80px;
+  .hero,
+  .why,
+  .fitur,
+  .mulai {
+    padding: 0 80px;
   }
 }
 
-/* Mobile Landscape & Small Tablets */
+/* Mobile Landscape & Small Tablets (≤768px) */
 @media (max-width: 768px) {
   .hero {
     padding: 0 30px;
+    text-align: left;
   }
 
   .hero h1 {
-    margin-left: 0;
-    margin-right: 0;
-    font-size: 1.8rem;
+    font-size: 2rem;
+    margin-top: 20%;
   }
 
   .typing {
-    margin-left: 0;
-    margin-right: 0;
     font-size: 14px;
   }
 
   .hero p {
-    margin-left: 0;
-    margin-right: 0;
-    font-size: 16px;
+    font-size: 15px;
   }
 
   .pindah {
-    margin-left: 0;
     width: 100%;
-    max-width: 300px;
-  }
-
-  /* Arrow Down - disesuaikan untuk mobile */
-  .arrow-down {
-    bottom: 30px;
-  }
-
-  .arrow-down svg {
-    width: 28px;
-    height: 28px;
+    max-width: 250px;
   }
 
   .scroll-down {
-    bottom: 65px;
+    bottom: 80px;
     font-size: 13px;
   }
 
-  .conten {
-    padding: 50px 30px;
-  }
-
-  .boxSatu h1 {
-    font-size: 1.6rem;
-  }
-
-  .boxSatu p {
-    font-size: 15px;
-  }
-
-  .why {
+  .why, .fitur, .mulai {
+    padding: 60px 30px;
     text-align: left;
-    margin-bottom: 60px;
   }
 
-  .why h1 {
-    margin-left: 0;
-    margin-right: 0;
-    font-size: 1.5rem;
-  }
-
-  .why p {
-    margin-left: 0;
-    margin-right: 0;
-    font-size: 15px;
-  }
-
-  .fitur {
-    text-align: left;
-    margin-bottom: 60px;
-  }
-
-  .fitur h1 {
-    margin-left: 0;
-    margin-right: 0;
+  .why h1, .fitur h1, .mulai h1 {
     font-size: 1.5rem;
   }
 
   .fitur li {
-    margin-left: 0;
-    margin-right: 0;
-    font-size: 15px;
+    margin-left: 15px;
   }
 
-  .mulai h1 {
-    font-size: 1.5rem;
-    padding: 0 20px;
-  }
-
-  .mulai p {
-    font-size: 15px;
-    padding: 0 20px;
+  .mulai {
+    text-align: center;
   }
 
   .overlay {
-    margin-left: 0;
-    margin-right: 0;
+    margin: 40px 30px 0;
   }
 }
 
-/* Mobile Portrait */
+/* Mobile Portrait (≤480px) */
 @media (max-width: 480px) {
   .hero {
     padding: 0 20px;
   }
 
   .hero h1 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
+    font-size: 1.6rem;
+    margin-top: 30%;
   }
 
   .typing {
@@ -383,137 +239,42 @@ span {
   }
 
   .hero p {
-    font-size: 15px;
-    margin-bottom: 15px;
+    font-size: 14px;
   }
 
   .pindah {
-    width: 100%;
-    max-width: 280px;
     height: 45px;
     font-size: 13px;
   }
 
-  /* Arrow Down - lebih ke atas di mobile kecil */
-  .arrow-down {
-    bottom: 25px;
-  }
-
-  .arrow-down svg {
-    width: 26px;
-    height: 26px;
-  }
-
   .scroll-down {
-    bottom: 55px;
+    bottom: 60px;
     font-size: 12px;
   }
 
-  .conten {
-    padding: 40px 20px;
+  .scroll-down svg {
+    width: 28px;
   }
 
-  .boxSatu {
-    margin-bottom: 60px;
-  }
-
-  .boxSatu h1 {
-    font-size: 1.4rem;
-  }
-
-  .boxSatu p {
-    font-size: 14px;
-    line-height: 1.6;
-  }
-
-  .why {
-    margin-bottom: 50px;
-  }
-
-  .why h1 {
-    font-size: 1.3rem;
-    margin-bottom: 10px;
-  }
-
-  .why p {
-    font-size: 14px;
-  }
-
-  .fitur {
-    margin-bottom: 50px;
-  }
-
-  .fitur h1 {
-    font-size: 1.3rem;
-    margin-bottom: 10px;
-  }
-
-  .fitur li {
-    font-size: 14px;
-    margin-top: 8px;
-  }
-
-  .mulai {
-    margin-top: 60px;
-    margin-bottom: 60px;
-  }
-
-  .mulai h1 {
+  .why h1, .fitur h1, .mulai h1 {
     font-size: 1.3rem;
   }
 
-  .mulai p {
+  .fitur li, .why p, .mulai p, .boxSatu p {
     font-size: 14px;
+  }
+
+  .overlay {
+    margin: 30px 20px 0;
   }
 }
 
-/* Extra Small Mobile */
+/* Extra Small (≤360px) */
 @media (max-width: 360px) {
-  .hero {
-    padding: 0 15px;
-  }
-
-  .hero h1 {
-    font-size: 1.3rem;
-  }
-
-  .typing {
-    font-size: 12px;
-  }
-
-  .hero p {
-    font-size: 14px;
-  }
-
-  .pindah {
-    height: 42px;
-    font-size: 12px;
-  }
-
-  /* Arrow Down - posisi paling aman untuk layar kecil */
-  .arrow-down {
-    bottom: 20px;
-  }
-
-  .arrow-down svg {
-    width: 24px;
-    height: 24px;
-  }
-
-  .scroll-down {
-    bottom: 50px;
-    font-size: 11px;
-  }
-
-  .conten {
-    padding: 30px 15px;
-  }
-
-  .boxSatu h1,
-  .why h1,
-  .fitur h1,
-  .mulai h1 {
-    font-size: 1.2rem;
-  }
-
-  .boxSatu p,
+  .hero h1 { font-size: 1.3rem; }
+  .typing { font-size: 12px; }
+  .hero p { font-size: 13px; }
+  .pindah { font-size: 12px; height: 42px; }
+  .why h1, .fitur h1, .mulai h1 { font-size: 1.2rem; }
+  .fitur li, .why p, .mulai p { font-size: 13px; }
+}
