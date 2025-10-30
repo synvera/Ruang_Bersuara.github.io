@@ -10,9 +10,11 @@
 <body>
 <div class="head" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
   <h1 data-aos="fade-up" data-aos-delay="150">Hello <span class="highlight" id="nameOutput">...</span></h1>
-  <input type="text" id="nameInput" placeholder="Masukkan namamu di sini..." id="typing-text" data-aos="fade-up" data-aos-delay="300" />
-  <button id="submitBtn" data-aos="fade-up" data-aos-delay="300">Lanjut</button>
-  <a href="index.html" data-aos="fade-up" data-aos-delay="300"> < Kembali</a>
+  <form id="nameForm" onsubmit="return false;">
+    <input type="text" id="nameInput" placeholder="Masukkan namamu di sini..." data-aos="fade-up" data-aos-delay="300" required />
+    <button type="submit" id="submitBtn" data-aos="fade-up" data-aos-delay="300">Lanjut</button>
+    <a href="index.html" data-aos="fade-up" data-aos-delay="300"> < Kembali</a>
+  </form>
 </div>
 </body>
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>

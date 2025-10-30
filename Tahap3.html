@@ -9,19 +9,73 @@
 <body>
 <div class="nav">
   <h1 id="greeting">Hello...</h1>
-  
+  <p>Udah pilih role kan??</p>
+  <p>sekarang luapin aja disini</p>  
 </div>
+<div class="form-container">
+  <form id="storyForm">
+    <textarea id="storyInput" placeholder="Ceritain apa aja yang ada di pikiran lu..." required></textarea>
+    <button type="submit">Kirim Cerita</button>
+  </form>
+  <div id="status" aria-live="polite" style="margin-top:8px;color:green"></div>
+</div>
+<footer>
+  <h1>Create By <span>Synvera</span>| Powered By </h1> <br>
+  <img src="https://pngimg.com/d/chatgpt_PNG2.png" alt="Chatgpt" class="gpt">
+  <img src="https://brandlogos.net/wp-content/uploads/2025/04/claude-logo_brandlogos.net_yx32y.png" alt="claude" class="Claude">
+</footer>
 </body>
 <script src="Tahap.js"></script>
 <script>
-    const name = getUsername();
-    const greeting = document.getElementById("greeting");
+  // get username from Tahap.js helper
+  const name = getUsername();
+  const greeting = document.getElementById("greeting");
+  const statusEl = document.getElementById('status');
 
-    if (!name) {
-      // kalau user masuk tanpa isi nama di tahap 1
-      window.location.href = "index.html";
-    } else {
-      greeting.textContent = `Hello, ${name}`;
+  if (!name) {
+    // kalau user masuk tanpa isi nama di tahap 1
+    window.location.href = "index.html";
+  } else {
+    greeting.textContent = `Hello, ${name}`;
+  }
+
+  // handle form submit and POST to save.php (server-side)
+  const form = document.getElementById('storyForm');
+  const storyInput = document.getElementById('storyInput');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const story = storyInput.value.trim();
+    if (!story) {
+      statusEl.style.color = 'red';
+      statusEl.textContent = 'Tolong tulis ceritanya dulu.';
+      return;
     }
+
+    statusEl.style.color = 'black';
+    statusEl.textContent = 'Mengirim...';
+
+    try {
+      const res = await fetch('save.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, story })
+      });
+
+      const data = await res.json();
+      if (res.ok && data.success) {
+        statusEl.style.color = 'green';
+        statusEl.textContent = 'Berhasil dikirim. Terima kasih!';
+        storyInput.value = '';
+      } else {
+        statusEl.style.color = 'red';
+        statusEl.textContent = data.message || 'Gagal mengirim, coba lagi.';
+      }
+    } catch (err) {
+      statusEl.style.color = 'red';
+      statusEl.textContent = 'Terjadi kesalahan koneksi.';
+      console.error(err);
+    }
+  });
 </script>
 </html>

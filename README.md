@@ -39,3 +39,14 @@ if (btn && input) {
   });
 }
 </pre>
+
+## Setup (XAMPP) — Menyimpan cerita ke database
+
+1. Jalankan XAMPP dan aktifkan Apache + MySQL (atau MariaDB).
+2. Buka `http://localhost/phpmyadmin` dan import berkas `create_table.sql` yang ada di folder proyek ini. Itu akan membuat database `ruang_bersuara` dan tabel `submissions`.
+3. Pastikan project ini berada di folder `htdocs` XAMPP (misal `C:\xampp\htdocs\Ruang_Bersuara`) atau atur Virtual Host sehingga dapat diakses via `http://localhost/Ruang_Bersuara/`.
+4. Buka `Tahap3.html` melalui browser: `http://localhost/Ruang_Bersuara/Tahap3.html` dan coba kirim cerita. Form akan mengirim data ke `save.php` yang menyimpan ke database.
+
+Catatan:
+- Default koneksi di `db_config.php` menggunakan username `root` dan password kosong (XAMPP default). Kalau berbeda, edit `db_config.php`.
+- Jika Anda menerima error, periksa log Apache/PHP atau buka DevTools (Network/Console) untuk melihat respon JSON dari `save.php`.
